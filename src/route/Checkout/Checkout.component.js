@@ -5,18 +5,25 @@ import './Checkout.extension.style.scss';
 
 /** @namespace TestProjec/Route/Checkout/Component/CheckoutComponent */
 export class CheckoutComponent extends SourceCheckout {
+    // This Function enables the progress bar
+    renderCheckMark() {
+        if (this.props.checkoutStep === 'SHIPPING_STEP') {
+            return 1;
+        }
+
+        return '✓';
+    }
+
     renderProgressBar() {
         return (
             <div className="progressBar">
                 <hr className="filledLine" />
                 <div className="thisStepContainer">
                     <button
-                      value="1"
-                      label="1"
                       disabled="true"
                       className="filledCircle"
                     >
-                    1
+                        { this.renderCheckMark() }
                     </button>
                     <span
                       className="boldText"
@@ -47,6 +54,7 @@ export class CheckoutComponent extends SourceCheckout {
     render() {
         return (
             <main block="Checkout">
+                { /* It is inserted here */ }
                 { this.renderProgressBar() }
                 <ContentWrapper
                   wrapperMix={ { block: 'Checkout', elem: 'Wrapper' } }
