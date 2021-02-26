@@ -36,6 +36,7 @@ export class CheckoutComponent extends SourceCheckout {
                 />
                 <div className="thisStepContainer">
                     <button
+                      disabled="true"
                       className={ this.props.checkoutStep === 'SHIPPING_STEP' ? 'circle' : 'filledCircle' }
                     >
                     2
