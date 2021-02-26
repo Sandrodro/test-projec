@@ -1,0 +1,77 @@
+.Checkout {
+    &::before {
+        @include after-mobile {
+            content: '';
+            background: none;
+            min-height: 0;
+        }
+    }
+}
+
+.progressBar {
+    display: flex;
+    align-items: center;
+    @include after-mobile {
+        background: var(--breadcrumbs-background);
+        min-height: 80px;
+    }
+}
+
+.thisStepContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin: 0 20px;
+    padding-top: 23px;
+    height: 80px;
+    width: 20px;
+
+    span {
+        margin-top: 5px;
+    }
+}
+
+@mixin basicLine {
+    display: inline-block;
+    width: 30%;
+}
+
+@mixin basicCircle {
+    height: 25px;
+    width: 25px;
+    background-color: rgb(102, 95, 95);
+    border-radius: 50%;
+    display: table-cell;
+    vertical-align: middle;
+    padding: 0;
+    cursor: default;
+    color: white;
+}
+
+.line {
+    @include basicLine;
+    border-top: 2px solid rgb(102, 95, 95);
+}
+
+.filledLine {
+    @include basicLine;
+    border-top: 2px solid rgb(242, 99, 35);
+}
+
+.filledCircle {
+    @include basicCircle;
+    background-color: rgb(242, 99, 35);
+}
+
+.circle {
+    @include basicCircle;
+}
+
+.regularText {
+    font-weight: normal;
+}
+
+.boldText {
+    font-weight: bold;
+}
