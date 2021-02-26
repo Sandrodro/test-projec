@@ -5,7 +5,6 @@ import './Checkout.extension.style.scss';
 
 /** @namespace TestProjec/Route/Checkout/Component/CheckoutComponent */
 export class CheckoutComponent extends SourceCheckout {
-    // This Function enables the progress bar
     renderCheckMark() {
         if (this.props.checkoutStep === 'SHIPPING_STEP') {
             return 1;
@@ -14,6 +13,7 @@ export class CheckoutComponent extends SourceCheckout {
         return '✓';
     }
 
+    // This Function enables the progress bar
     renderProgressBar() {
         return (
             <div className="progressBar">
